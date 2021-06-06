@@ -23,7 +23,7 @@ class TF_IDF_Model(object):
         self.documents_number = len(documents_list)
         # 存储每个文本中每个词的词频
         self.tf = []
-        # 存储每个文档中词的逆文档频率
+        # 存储每个文档中词的词频-逆文档频率
         self.tf_idf = []
         # 存储每个词汇的逆文档频率
         self.idf = {}
