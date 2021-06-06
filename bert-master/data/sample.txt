@@ -1,0 +1,15 @@
+koa s�peer Electronics
+
+cel  eval  board  upc8172tb
+
+avx  corporation  478  08052c223kaz2atr
+
+24  024  101  dip  cable
+
+cap  tant poly cha  mnt
+c326c561fag5ta7301  kemet  cap
+ ipp  tvs  二极管  表面贴装型
+665  ohms  0.1%  0.4w  2/5w
+薄膜  a140666ct  nd  te  connectivity
+= = =
+
