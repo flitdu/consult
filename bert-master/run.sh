@@ -1,1 +1,1 @@
-python3 create_pretraining_data.py --input_file data/sample.txt --output_file output.txt --vocab_file data/vocab.txt --max_seq_length 30
+python3 create_pretraining_data.py --input_file data/sample.txt --output_file tf_examples.tfrecord --vocab_file data/vocab.txt --max_seq_length 30

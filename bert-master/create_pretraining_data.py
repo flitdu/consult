@@ -28,7 +28,7 @@ log.setLevel(logging.INFO)  # 控制台显示控制, INFO ,WARN
 # create formatter and add it to the handlers
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 # create file handler which logs even debug messages
-fh = logging.FileHandler('data/create_pretraining.log')
+fh = logging.FileHandler('data/create_pretraining')
 fh.setLevel(logging.INFO)  # 控制文件写入级别
 fh.setFormatter(formatter)
 log.addHandler(fh)
@@ -236,8 +236,8 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
               all_documents, document_index, max_seq_length, short_seq_prob,
               masked_lm_prob, max_predictions_per_seq, vocab_words, rng))
 
-  # rng.shuffle(instances)
-  tf.logging.info(f'instances:{instances}')
+  rng.shuffle(instances)
+  tf.logging.info(f'instances:{instances}--{type(instances)}')
   return instances
 
 
@@ -245,8 +245,9 @@ def create_instances_from_document(
     all_documents, document_index, max_seq_length, short_seq_prob,
     masked_lm_prob, max_predictions_per_seq, vocab_words, rng):
   """Creates `TrainingInstance`s for a single document."""
-  tf.logging.info(f'document_index：{document_index}')
+  tf.logging.info(f'=====document_index：{document_index}=========')
   document = all_documents[document_index]
+  tf.logging.info(f'document 长度：{len(document)}')
 
   # Account for [CLS], [SEP], [SEP]
   max_num_tokens = max_seq_length - 3
@@ -277,9 +278,9 @@ def create_instances_from_document(
     segment = document[i]
     current_chunk.append(segment)
     current_length += len(segment)
-    tf.logging.info(f'segment：{segment}')
-    tf.logging.info(f'current_chunk：{current_chunk}')
-    tf.logging.info(f'current_length：{current_length}')
+    tf.logging.info(f'segment：{segment}--')
+    tf.logging.info(f'current_chunk：{current_chunk}--')
+    tf.logging.info(f'current_length：{current_length}--{i}')
 
     if i == len(document) - 1 or current_length >= target_seq_length:
       if current_chunk:
@@ -288,15 +289,18 @@ def create_instances_from_document(
         a_end = 1
         if len(current_chunk) >= 2:
           a_end = rng.randint(1, len(current_chunk) - 1)
+        tf.logging.info(f'a_end：{a_end}')
 
         tokens_a = []
         for j in range(a_end):
-          tokens_a.extend(current_chunk[j])
+          tokens_a.extend(current_chunk[j])  #如果current_chunk 有点多，则随机选取部分
+        tf.logging.info(f'tokens_a：{tokens_a}')
 
         tokens_b = []
         # Random next
         is_random_next = False
-        if len(current_chunk) == 1 or rng.random() < 0.5:
+        tf.logging.info(f'rng.random()：{rng.random()}')
+        if len(current_chunk) == 1 or rng.random() < 0.5:   # 非下一句
           is_random_next = True
           target_b_length = target_seq_length - len(tokens_a)
 
@@ -319,12 +323,17 @@ def create_instances_from_document(
           # they don't go to waste.
           num_unused_segments = len(current_chunk) - a_end
           i -= num_unused_segments
+          tf.logging.info(f'非下一句，i更新：{i}')
         # Actual next
-        else:
+        else:  # 来自同一个document
           is_random_next = False
           for j in range(a_end, len(current_chunk)):
             tokens_b.extend(current_chunk[j])
+        tf.logging.info(f'before truncate_seq_pair, tokens_a：{tokens_a}')
+        tf.logging.info(f'before truncate_seq_pair, tokens_b：{tokens_b}')
         truncate_seq_pair(tokens_a, tokens_b, max_num_tokens, rng)
+        tf.logging.info(f'after truncate_seq_pair, tokens_a：{tokens_a}')
+        tf.logging.info(f'after truncate_seq_pair, tokens_b：{tokens_b}')
 
         assert len(tokens_a) >= 1
         assert len(tokens_b) >= 1
@@ -351,6 +360,7 @@ def create_instances_from_document(
         (tokens, masked_lm_positions,
          masked_lm_labels) = create_masked_lm_predictions(
              tokens, masked_lm_prob, max_predictions_per_seq, vocab_words, rng)
+        tf.logging.info(f'create_masked_lm_predictions 后tokens：{tokens}')
         instance = TrainingInstance(
             tokens=tokens,
             segment_ids=segment_ids,
@@ -361,7 +371,7 @@ def create_instances_from_document(
       current_chunk = []
       current_length = 0
     i += 1
-
+  tf.logging.info(f'=====document_index：{document_index}=========')
   return instances
 
 
@@ -441,7 +451,6 @@ def create_masked_lm_predictions(tokens, masked_lm_prob,
   for p in masked_lms:
     masked_lm_positions.append(p.index)
     masked_lm_labels.append(p.label)
-
   return (output_tokens, masked_lm_positions, masked_lm_labels)
 
 
@@ -505,7 +514,7 @@ def main(_):
 
 
 if __name__ == "__main__":
-  f =open(f'data/create_pretraining.log', 'w')  #  先清空 日志
+  f =open(f'data/create_pretraining', 'w')  #  先清空 日志
   f.truncate()
 
   flags.mark_flag_as_required("input_file")
