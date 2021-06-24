@@ -15,6 +15,9 @@ Description :
 data_watermelon = "../data/西瓜数据集4.0.txt"
 
 
+class KMeans:
+    pass
+
 
 
 if __name__ == "__main__":
