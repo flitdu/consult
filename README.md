@@ -1,4 +1,4 @@
-# 学而不思则罔，思而不学则殆
+### 学而不思则罔，思而不学则殆
 
 - jupyter在线: https://nbviewer.jupyter.org/
 
