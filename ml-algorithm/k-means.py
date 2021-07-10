@@ -28,11 +28,8 @@ class KMeans:
     # def update_cen
 
 
-
 if __name__ == "__main__":
     pass
-
-
     k_means = KMeans(data_watermelon, 4)
     print(k_means.k)
     print(k_means.centroid)
