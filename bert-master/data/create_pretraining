@@ -1,0 +1,588 @@
+2021-07-07 23:06:45,093 - tensorflow - WARNING - From create_pretraining_data.py:523: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+2021-07-07 23:06:45,107 - tensorflow - WARNING - From create_pretraining_data.py:476: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+2021-07-07 23:06:45,107 - tensorflow - INFO - =============传参：
+2021-07-07 23:06:45,107 - tensorflow - INFO - data/sample.txt
+2021-07-07 23:06:45,107 - tensorflow - INFO - tf_examples.tfrecord
+2021-07-07 23:06:45,108 - tensorflow - INFO - data/vocab.txt
+2021-07-07 23:06:45,108 - tensorflow - INFO - do_lower_case:  True; TRUE--=转小写
+2021-07-07 23:06:45,108 - tensorflow - INFO - max_seq_length: 30
+2021-07-07 23:06:45,108 - tensorflow - INFO - dupe_factor:  1
+2021-07-07 23:06:45,108 - tensorflow - INFO - do_whole_word_mask: False
+2021-07-07 23:06:45,108 - tensorflow - INFO - =============done：
+2021-07-07 23:06:45,108 - tensorflow - WARNING - From /Users/dufy/code/consult/bert-master/tokenization.py:125: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+2021-07-07 23:06:45,110 - tensorflow - INFO - vocab:OrderedDict([('[PAD]', 0), ('[unused1]', 1), ('[unused2]', 2), ('[unused3]', 3), ('[UNK]', 4), ('[CLS]', 5), ('[SEP]', 6), ('[MASK]', 7), ('<S>', 8), ('<T>', 9), (',', 10), ('!', 11), ('"', 12), ('#', 13), ('$', 14), ('%', 15), ('|', 16), ('}', 17), ('~', 18), ('0', 19), ('1', 20), ('2', 21), ('3', 22), ('4', 23), ('5', 24), ('6', 25), ('7', 26), ('8', 27), ('9', 28), ('10', 29), ('edu', 30), ('file', 31), ('cho', 32), ('qr', 33), ('##car', 34), ('##our', 35), ('186', 36), ('##ant', 37), ('##ｄ', 38), ('eric', 39), ('1914', 40), ('rends', 41), ('##jo', 42), ('0.1%', 43), ('0.4w', 44), ('024', 45), ('08052c223kaz2atr', 46), ('1000uf', 47), ('101', 48), ('12.3a', 49), ('1206', 50), ('123fl', 51), ('2.4ghz', 52), ('2/5w', 53), ('24', 54), ('24pos', 55), ('250v', 56), ('32.4v', 57), ('3216', 58), ('478', 59), ('50v', 60), ('560pf', 61), ('665', 62), ('=', 63), ('a140666ct', 64), ('aec', 65), ('aries', 66), ('avx', 67), ('board', 68), ('c0g', 69), ('c326c561fag5ta7301', 70), ('cable', 71), ('cap', 72), ('cel', 73), ('ele', 74), ('##ctronics', 75), ('elec', 76), ('##tronics', 77), ('cer', 78), ('cha', 79), ('connectivity', 80), ('corporation', 81), ('dip', 82), ('ev24', 83), ('eval', 84), ('f7541ct', 85), ('film', 86), ('inc.', 87), ('ipp', 88), ('kemet', 89), ('koa', 90), ('littelfuse', 91), ('m550b108m050th', 92), ('mnt', 93), ('nd', 94), ('np0', 95), ('ohms', 96), ('passive', 97), ('poly', 98), ('product', 99), ('q200', 100), ('rad', 101), ('res', 102), ('rn73h1ettp1150b10', 103), ('rq73c2b665rbtd', 104), ('smd', 105), ('sod', 106), ('speer', 107), ('tant', 108), ('te', 109), ('thin', 110), ('tvs', 111), ('upc8172tb', 112), ('二', 113), ('极', 114), ('管', 115), ('公', 116), ('制', 117), ('夹', 118), ('子', 119), ('汽', 120), ('车', 121), ('级', 122), ('认证', 123), ('耐硫', 124), ('芯片电阻', 125), ('薄膜', 126), ('表', 127), ('面', 128), ('贴', 129), ('装', 130), ('型', 131)])
+2021-07-07 23:06:45,110 - tensorflow - WARNING - From create_pretraining_data.py:495: The name tf.gfile.Glob is deprecated. Please use tf.io.gfile.glob instead.
+
+2021-07-07 23:06:45,112 - tensorflow - INFO - *** Reading from input files ***
+2021-07-07 23:06:45,112 - tensorflow - INFO -   data/sample.txt
+2021-07-07 23:06:45,113 - tensorflow - INFO - 传入的text：koa s�peer Electronics
+2021-07-07 23:06:45,113 - tensorflow - INFO - after [convert_to_unicode] :koa s�peer Electronics
+2021-07-07 23:06:45,113 - tensorflow - WARNING - From /Users/dufy/code/consult/bert-master/tokenization.py:302: The name tf.logging.debug is deprecated. Please use tf.compat.v1.logging.debug instead.
+
+2021-07-07 23:06:45,115 - tensorflow - INFO - output:['k', 'o', 'a', ' ', 's', 'p', 'e', 'e', 'r', ' ', 'E', 'l', 'e', 'c', 't', 'r', 'o', 'n', 'i', 'c', 's']
+2021-07-07 23:06:45,115 - tensorflow - INFO - after [_clean_text] :koa speer Electronics
+2021-07-07 23:06:45,115 - tensorflow - INFO - after [_tokenize_chinese_chars] :koa speer Electronics
+2021-07-07 23:06:45,116 - tensorflow - INFO - after [whitespace_tokenize] :['koa', 'speer', 'Electronics']
+2021-07-07 23:06:45,116 - tensorflow - INFO - token :koa
+2021-07-07 23:06:45,116 - tensorflow - INFO - chars:['k', 'o', 'a']
+2021-07-07 23:06:45,116 - tensorflow - INFO - token :speer
+2021-07-07 23:06:45,116 - tensorflow - INFO - chars:['s', 'p', 'e', 'e', 'r']
+2021-07-07 23:06:45,116 - tensorflow - INFO - token :electronics
+2021-07-07 23:06:45,116 - tensorflow - INFO - chars:['e', 'l', 'e', 'c', 't', 'r', 'o', 'n', 'i', 'c', 's']
+2021-07-07 23:06:45,116 - tensorflow - INFO - split_tokens :['koa', 'speer', 'electronics']
+2021-07-07 23:06:45,116 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['koa', 'speer', 'electronics']
+2021-07-07 23:06:45,116 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :koa
+2021-07-07 23:06:45,116 - tensorflow - INFO - cur_substr :koa
+2021-07-07 23:06:45,117 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['koa']
+2021-07-07 23:06:45,117 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :speer
+2021-07-07 23:06:45,117 - tensorflow - INFO - cur_substr :speer
+2021-07-07 23:06:45,117 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['speer']
+2021-07-07 23:06:45,117 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :electronics
+2021-07-07 23:06:45,117 - tensorflow - INFO - cur_substr :elec
+2021-07-07 23:06:45,117 - tensorflow - INFO - cur_substr :##tronics
+2021-07-07 23:06:45,117 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['elec', '##tronics']
+2021-07-07 23:06:45,117 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']]]
+2021-07-07 23:06:45,117 - tensorflow - INFO - 传入的text：
+2021-07-07 23:06:45,117 - tensorflow - INFO - after [convert_to_unicode] :
+2021-07-07 23:06:45,117 - tensorflow - INFO - output:[]
+2021-07-07 23:06:45,117 - tensorflow - INFO - after [_clean_text] :
+2021-07-07 23:06:45,117 - tensorflow - INFO - after [_tokenize_chinese_chars] :
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [whitespace_tokenize] :[]
+2021-07-07 23:06:45,118 - tensorflow - INFO - split_tokens :[]
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [basic_tokenizer.tokenize] :[]
+2021-07-07 23:06:45,118 - tensorflow - INFO - 传入的text：cel  eval  board  upc8172tb
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [convert_to_unicode] :cel  eval  board  upc8172tb
+2021-07-07 23:06:45,118 - tensorflow - INFO - output:['c', 'e', 'l', ' ', ' ', 'e', 'v', 'a', 'l', ' ', ' ', 'b', 'o', 'a', 'r', 'd', ' ', ' ', 'u', 'p', 'c', '8', '1', '7', '2', 't', 'b']
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [_clean_text] :cel  eval  board  upc8172tb
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [_tokenize_chinese_chars] :cel  eval  board  upc8172tb
+2021-07-07 23:06:45,118 - tensorflow - INFO - after [whitespace_tokenize] :['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,118 - tensorflow - INFO - token :cel
+2021-07-07 23:06:45,118 - tensorflow - INFO - chars:['c', 'e', 'l']
+2021-07-07 23:06:45,118 - tensorflow - INFO - token :eval
+2021-07-07 23:06:45,118 - tensorflow - INFO - chars:['e', 'v', 'a', 'l']
+2021-07-07 23:06:45,119 - tensorflow - INFO - token :board
+2021-07-07 23:06:45,119 - tensorflow - INFO - chars:['b', 'o', 'a', 'r', 'd']
+2021-07-07 23:06:45,119 - tensorflow - INFO - token :upc8172tb
+2021-07-07 23:06:45,119 - tensorflow - INFO - chars:['u', 'p', 'c', '8', '1', '7', '2', 't', 'b']
+2021-07-07 23:06:45,119 - tensorflow - INFO - split_tokens :['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,119 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,119 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :cel
+2021-07-07 23:06:45,119 - tensorflow - INFO - cur_substr :cel
+2021-07-07 23:06:45,119 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['cel']
+2021-07-07 23:06:45,119 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :eval
+2021-07-07 23:06:45,119 - tensorflow - INFO - cur_substr :eval
+2021-07-07 23:06:45,119 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['eval']
+2021-07-07 23:06:45,119 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :board
+2021-07-07 23:06:45,119 - tensorflow - INFO - cur_substr :board
+2021-07-07 23:06:45,120 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['board']
+2021-07-07 23:06:45,120 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :upc8172tb
+2021-07-07 23:06:45,120 - tensorflow - INFO - cur_substr :upc8172tb
+2021-07-07 23:06:45,120 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['upc8172tb']
+2021-07-07 23:06:45,120 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']]]
+2021-07-07 23:06:45,120 - tensorflow - INFO - 传入的text：
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [convert_to_unicode] :
+2021-07-07 23:06:45,120 - tensorflow - INFO - output:[]
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [_clean_text] :
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [_tokenize_chinese_chars] :
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [whitespace_tokenize] :[]
+2021-07-07 23:06:45,120 - tensorflow - INFO - split_tokens :[]
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [basic_tokenizer.tokenize] :[]
+2021-07-07 23:06:45,120 - tensorflow - INFO - 传入的text：avx  corporation  478  08052c223kaz2atr
+2021-07-07 23:06:45,120 - tensorflow - INFO - after [convert_to_unicode] :avx  corporation  478  08052c223kaz2atr
+2021-07-07 23:06:45,121 - tensorflow - INFO - output:['a', 'v', 'x', ' ', ' ', 'c', 'o', 'r', 'p', 'o', 'r', 'a', 't', 'i', 'o', 'n', ' ', ' ', '4', '7', '8', ' ', ' ', '0', '8', '0', '5', '2', 'c', '2', '2', '3', 'k', 'a', 'z', '2', 'a', 't', 'r']
+2021-07-07 23:06:45,121 - tensorflow - INFO - after [_clean_text] :avx  corporation  478  08052c223kaz2atr
+2021-07-07 23:06:45,121 - tensorflow - INFO - after [_tokenize_chinese_chars] :avx  corporation  478  08052c223kaz2atr
+2021-07-07 23:06:45,121 - tensorflow - INFO - after [whitespace_tokenize] :['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,121 - tensorflow - INFO - token :avx
+2021-07-07 23:06:45,121 - tensorflow - INFO - chars:['a', 'v', 'x']
+2021-07-07 23:06:45,121 - tensorflow - INFO - token :corporation
+2021-07-07 23:06:45,121 - tensorflow - INFO - chars:['c', 'o', 'r', 'p', 'o', 'r', 'a', 't', 'i', 'o', 'n']
+2021-07-07 23:06:45,121 - tensorflow - INFO - token :478
+2021-07-07 23:06:45,121 - tensorflow - INFO - chars:['4', '7', '8']
+2021-07-07 23:06:45,121 - tensorflow - INFO - token :08052c223kaz2atr
+2021-07-07 23:06:45,122 - tensorflow - INFO - chars:['0', '8', '0', '5', '2', 'c', '2', '2', '3', 'k', 'a', 'z', '2', 'a', 't', 'r']
+2021-07-07 23:06:45,122 - tensorflow - INFO - split_tokens :['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,122 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :avx
+2021-07-07 23:06:45,122 - tensorflow - INFO - cur_substr :avx
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['avx']
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :corporation
+2021-07-07 23:06:45,122 - tensorflow - INFO - cur_substr :corporation
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['corporation']
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :478
+2021-07-07 23:06:45,122 - tensorflow - INFO - cur_substr :478
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['478']
+2021-07-07 23:06:45,122 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :08052c223kaz2atr
+2021-07-07 23:06:45,122 - tensorflow - INFO - cur_substr :08052c223kaz2atr
+2021-07-07 23:06:45,123 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['08052c223kaz2atr']
+2021-07-07 23:06:45,123 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']]]
+2021-07-07 23:06:45,123 - tensorflow - INFO - 传入的text：
+2021-07-07 23:06:45,123 - tensorflow - INFO - after [convert_to_unicode] :
+2021-07-07 23:06:45,123 - tensorflow - INFO - output:[]
+2021-07-07 23:06:45,123 - tensorflow - INFO - after [_clean_text] :
+2021-07-07 23:06:45,123 - tensorflow - INFO - after [_tokenize_chinese_chars] :
+2021-07-07 23:06:45,123 - tensorflow - INFO - after [whitespace_tokenize] :[]
+2021-07-07 23:06:45,123 - tensorflow - INFO - split_tokens :[]
+2021-07-07 23:06:45,123 - tensorflow - INFO - after [basic_tokenizer.tokenize] :[]
+2021-07-07 23:06:45,123 - tensorflow - INFO - 传入的text：24  024  101  dip  cable
+2021-07-07 23:06:45,124 - tensorflow - INFO - after [convert_to_unicode] :24  024  101  dip  cable
+2021-07-07 23:06:45,124 - tensorflow - INFO - output:['2', '4', ' ', ' ', '0', '2', '4', ' ', ' ', '1', '0', '1', ' ', ' ', 'd', 'i', 'p', ' ', ' ', 'c', 'a', 'b', 'l', 'e']
+2021-07-07 23:06:45,124 - tensorflow - INFO - after [_clean_text] :24  024  101  dip  cable
+2021-07-07 23:06:45,124 - tensorflow - INFO - after [_tokenize_chinese_chars] :24  024  101  dip  cable
+2021-07-07 23:06:45,124 - tensorflow - INFO - after [whitespace_tokenize] :['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,124 - tensorflow - INFO - token :24
+2021-07-07 23:06:45,124 - tensorflow - INFO - chars:['2', '4']
+2021-07-07 23:06:45,124 - tensorflow - INFO - token :024
+2021-07-07 23:06:45,124 - tensorflow - INFO - chars:['0', '2', '4']
+2021-07-07 23:06:45,124 - tensorflow - INFO - token :101
+2021-07-07 23:06:45,125 - tensorflow - INFO - chars:['1', '0', '1']
+2021-07-07 23:06:45,125 - tensorflow - INFO - token :dip
+2021-07-07 23:06:45,125 - tensorflow - INFO - chars:['d', 'i', 'p']
+2021-07-07 23:06:45,125 - tensorflow - INFO - token :cable
+2021-07-07 23:06:45,125 - tensorflow - INFO - chars:['c', 'a', 'b', 'l', 'e']
+2021-07-07 23:06:45,125 - tensorflow - INFO - split_tokens :['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,125 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,125 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :24
+2021-07-07 23:06:45,125 - tensorflow - INFO - cur_substr :24
+2021-07-07 23:06:45,125 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['24']
+2021-07-07 23:06:45,125 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :024
+2021-07-07 23:06:45,126 - tensorflow - INFO - cur_substr :024
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['024']
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :101
+2021-07-07 23:06:45,126 - tensorflow - INFO - cur_substr :101
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['101']
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :dip
+2021-07-07 23:06:45,126 - tensorflow - INFO - cur_substr :dip
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['dip']
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :cable
+2021-07-07 23:06:45,126 - tensorflow - INFO - cur_substr :cable
+2021-07-07 23:06:45,126 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['cable']
+2021-07-07 23:06:45,126 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']]]
+2021-07-07 23:06:45,127 - tensorflow - INFO - 传入的text：
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [convert_to_unicode] :
+2021-07-07 23:06:45,127 - tensorflow - INFO - output:[]
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [_clean_text] :
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [_tokenize_chinese_chars] :
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [whitespace_tokenize] :[]
+2021-07-07 23:06:45,127 - tensorflow - INFO - split_tokens :[]
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [basic_tokenizer.tokenize] :[]
+2021-07-07 23:06:45,127 - tensorflow - INFO - 传入的text：cap  tant poly cha
+2021-07-07 23:06:45,127 - tensorflow - INFO - after [convert_to_unicode] :cap  tant poly cha
+2021-07-07 23:06:45,128 - tensorflow - INFO - output:['c', 'a', 'p', ' ', ' ', 't', 'a', 'n', 't', ' ', 'p', 'o', 'l', 'y', ' ', 'c', 'h', 'a']
+2021-07-07 23:06:45,128 - tensorflow - INFO - after [_clean_text] :cap  tant poly cha
+2021-07-07 23:06:45,128 - tensorflow - INFO - after [_tokenize_chinese_chars] :cap  tant poly cha
+2021-07-07 23:06:45,128 - tensorflow - INFO - after [whitespace_tokenize] :['cap', 'tant', 'poly', 'cha']
+2021-07-07 23:06:45,128 - tensorflow - INFO - token :cap
+2021-07-07 23:06:45,128 - tensorflow - INFO - chars:['c', 'a', 'p']
+2021-07-07 23:06:45,128 - tensorflow - INFO - token :tant
+2021-07-07 23:06:45,129 - tensorflow - INFO - chars:['t', 'a', 'n', 't']
+2021-07-07 23:06:45,129 - tensorflow - INFO - token :poly
+2021-07-07 23:06:45,129 - tensorflow - INFO - chars:['p', 'o', 'l', 'y']
+2021-07-07 23:06:45,129 - tensorflow - INFO - token :cha
+2021-07-07 23:06:45,129 - tensorflow - INFO - chars:['c', 'h', 'a']
+2021-07-07 23:06:45,129 - tensorflow - INFO - split_tokens :['cap', 'tant', 'poly', 'cha']
+2021-07-07 23:06:45,129 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['cap', 'tant', 'poly', 'cha']
+2021-07-07 23:06:45,129 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :cap
+2021-07-07 23:06:45,129 - tensorflow - INFO - cur_substr :cap
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['cap']
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :tant
+2021-07-07 23:06:45,130 - tensorflow - INFO - cur_substr :tant
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['tant']
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :poly
+2021-07-07 23:06:45,130 - tensorflow - INFO - cur_substr :poly
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['poly']
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :cha
+2021-07-07 23:06:45,130 - tensorflow - INFO - cur_substr :cha
+2021-07-07 23:06:45,130 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['cha']
+2021-07-07 23:06:45,130 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha']]]
+2021-07-07 23:06:45,131 - tensorflow - INFO - 传入的text：c326c561fag5ta7301  kemet  cap
+2021-07-07 23:06:45,131 - tensorflow - INFO - after [convert_to_unicode] :c326c561fag5ta7301  kemet  cap
+2021-07-07 23:06:45,131 - tensorflow - INFO - output:['c', '3', '2', '6', 'c', '5', '6', '1', 'f', 'a', 'g', '5', 't', 'a', '7', '3', '0', '1', ' ', ' ', 'k', 'e', 'm', 'e', 't', ' ', ' ', 'c', 'a', 'p']
+2021-07-07 23:06:45,131 - tensorflow - INFO - after [_clean_text] :c326c561fag5ta7301  kemet  cap
+2021-07-07 23:06:45,131 - tensorflow - INFO - after [_tokenize_chinese_chars] :c326c561fag5ta7301  kemet  cap
+2021-07-07 23:06:45,132 - tensorflow - INFO - after [whitespace_tokenize] :['c326c561fag5ta7301', 'kemet', 'cap']
+2021-07-07 23:06:45,132 - tensorflow - INFO - token :c326c561fag5ta7301
+2021-07-07 23:06:45,132 - tensorflow - INFO - chars:['c', '3', '2', '6', 'c', '5', '6', '1', 'f', 'a', 'g', '5', 't', 'a', '7', '3', '0', '1']
+2021-07-07 23:06:45,132 - tensorflow - INFO - token :kemet
+2021-07-07 23:06:45,132 - tensorflow - INFO - chars:['k', 'e', 'm', 'e', 't']
+2021-07-07 23:06:45,132 - tensorflow - INFO - token :cap
+2021-07-07 23:06:45,132 - tensorflow - INFO - chars:['c', 'a', 'p']
+2021-07-07 23:06:45,132 - tensorflow - INFO - split_tokens :['c326c561fag5ta7301', 'kemet', 'cap']
+2021-07-07 23:06:45,132 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['c326c561fag5ta7301', 'kemet', 'cap']
+2021-07-07 23:06:45,132 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :c326c561fag5ta7301
+2021-07-07 23:06:45,132 - tensorflow - INFO - cur_substr :c326c561fag5ta7301
+2021-07-07 23:06:45,132 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['c326c561fag5ta7301']
+2021-07-07 23:06:45,132 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :kemet
+2021-07-07 23:06:45,133 - tensorflow - INFO - cur_substr :kemet
+2021-07-07 23:06:45,133 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['kemet']
+2021-07-07 23:06:45,133 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :cap
+2021-07-07 23:06:45,133 - tensorflow - INFO - cur_substr :cap
+2021-07-07 23:06:45,133 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['cap']
+2021-07-07 23:06:45,133 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap']]]
+2021-07-07 23:06:45,133 - tensorflow - INFO - 传入的text：ipp  tvs  二极管
+2021-07-07 23:06:45,133 - tensorflow - INFO - after [convert_to_unicode] :ipp  tvs  二极管
+2021-07-07 23:06:45,140 - tensorflow - INFO - output:['i', 'p', 'p', ' ', ' ', 't', 'v', 's', ' ', ' ', '二', '极', '管']
+2021-07-07 23:06:45,140 - tensorflow - INFO - after [_clean_text] :ipp  tvs  二极管
+2021-07-07 23:06:45,140 - tensorflow - INFO - after [_tokenize_chinese_chars] :ipp  tvs   二  极  管 
+2021-07-07 23:06:45,140 - tensorflow - INFO - after [whitespace_tokenize] :['ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,140 - tensorflow - INFO - token :ipp
+2021-07-07 23:06:45,140 - tensorflow - INFO - chars:['i', 'p', 'p']
+2021-07-07 23:06:45,141 - tensorflow - INFO - token :tvs
+2021-07-07 23:06:45,141 - tensorflow - INFO - chars:['t', 'v', 's']
+2021-07-07 23:06:45,141 - tensorflow - INFO - token :二
+2021-07-07 23:06:45,141 - tensorflow - INFO - chars:['二']
+2021-07-07 23:06:45,141 - tensorflow - INFO - token :极
+2021-07-07 23:06:45,141 - tensorflow - INFO - chars:['极']
+2021-07-07 23:06:45,141 - tensorflow - INFO - token :管
+2021-07-07 23:06:45,141 - tensorflow - INFO - chars:['管']
+2021-07-07 23:06:45,141 - tensorflow - INFO - split_tokens :['ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,141 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,142 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :ipp
+2021-07-07 23:06:45,142 - tensorflow - INFO - cur_substr :ipp
+2021-07-07 23:06:45,142 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['ipp']
+2021-07-07 23:06:45,142 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :tvs
+2021-07-07 23:06:45,142 - tensorflow - INFO - cur_substr :tvs
+2021-07-07 23:06:45,142 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['tvs']
+2021-07-07 23:06:45,142 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :二
+2021-07-07 23:06:45,142 - tensorflow - INFO - cur_substr :二
+2021-07-07 23:06:45,143 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['二']
+2021-07-07 23:06:45,143 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :极
+2021-07-07 23:06:45,143 - tensorflow - INFO - cur_substr :极
+2021-07-07 23:06:45,143 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['极']
+2021-07-07 23:06:45,143 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :管
+2021-07-07 23:06:45,143 - tensorflow - INFO - cur_substr :管
+2021-07-07 23:06:45,143 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['管']
+2021-07-07 23:06:45,144 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管']]]
+2021-07-07 23:06:45,144 - tensorflow - INFO - 传入的text：665  ohms  0.1%  0.4w  2/5w
+2021-07-07 23:06:45,144 - tensorflow - INFO - after [convert_to_unicode] :665  ohms  0.1%  0.4w  2/5w
+2021-07-07 23:06:45,145 - tensorflow - INFO - output:['6', '6', '5', ' ', ' ', 'o', 'h', 'm', 's', ' ', ' ', '0', '.', '1', '%', ' ', ' ', '0', '.', '4', 'w', ' ', ' ', '2', '/', '5', 'w']
+2021-07-07 23:06:45,145 - tensorflow - INFO - after [_clean_text] :665  ohms  0.1%  0.4w  2/5w
+2021-07-07 23:06:45,145 - tensorflow - INFO - after [_tokenize_chinese_chars] :665  ohms  0.1%  0.4w  2/5w
+2021-07-07 23:06:45,146 - tensorflow - INFO - after [whitespace_tokenize] :['665', 'ohms', '0.1%', '0.4w', '2/5w']
+2021-07-07 23:06:45,146 - tensorflow - INFO - token :665
+2021-07-07 23:06:45,146 - tensorflow - INFO - chars:['6', '6', '5']
+2021-07-07 23:06:45,146 - tensorflow - INFO - token :ohms
+2021-07-07 23:06:45,147 - tensorflow - INFO - chars:['o', 'h', 'm', 's']
+2021-07-07 23:06:45,147 - tensorflow - INFO - token :0.1%
+2021-07-07 23:06:45,147 - tensorflow - INFO - chars:['0', '.', '1', '%']
+2021-07-07 23:06:45,148 - tensorflow - INFO - token :0.4w
+2021-07-07 23:06:45,148 - tensorflow - INFO - chars:['0', '.', '4', 'w']
+2021-07-07 23:06:45,148 - tensorflow - INFO - token :2/5w
+2021-07-07 23:06:45,149 - tensorflow - INFO - chars:['2', '/', '5', 'w']
+2021-07-07 23:06:45,149 - tensorflow - INFO - split_tokens :['665', 'ohms', '0', '.', '1', '%', '0', '.', '4w', '2', '/', '5w']
+2021-07-07 23:06:45,149 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['665', 'ohms', '0', '.', '1', '%', '0', '.', '4w', '2', '/', '5w']
+2021-07-07 23:06:45,149 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :665
+2021-07-07 23:06:45,149 - tensorflow - INFO - cur_substr :665
+2021-07-07 23:06:45,149 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['665']
+2021-07-07 23:06:45,150 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :ohms
+2021-07-07 23:06:45,150 - tensorflow - INFO - cur_substr :ohms
+2021-07-07 23:06:45,150 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['ohms']
+2021-07-07 23:06:45,150 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :0
+2021-07-07 23:06:45,150 - tensorflow - INFO - cur_substr :0
+2021-07-07 23:06:45,150 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['0']
+2021-07-07 23:06:45,151 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :.
+2021-07-07 23:06:45,151 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,151 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :1
+2021-07-07 23:06:45,152 - tensorflow - INFO - cur_substr :1
+2021-07-07 23:06:45,152 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['1']
+2021-07-07 23:06:45,152 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :%
+2021-07-07 23:06:45,152 - tensorflow - INFO - cur_substr :%
+2021-07-07 23:06:45,152 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['%']
+2021-07-07 23:06:45,152 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :0
+2021-07-07 23:06:45,152 - tensorflow - INFO - cur_substr :0
+2021-07-07 23:06:45,152 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['0']
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :.
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :4w
+2021-07-07 23:06:45,153 - tensorflow - INFO - cur_substr :4
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :2
+2021-07-07 23:06:45,153 - tensorflow - INFO - cur_substr :2
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['2']
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :/
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :5w
+2021-07-07 23:06:45,153 - tensorflow - INFO - cur_substr :5
+2021-07-07 23:06:45,153 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,153 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']]]
+2021-07-07 23:06:45,153 - tensorflow - INFO - 传入的text：薄膜  a140666ct  nd  te
+2021-07-07 23:06:45,154 - tensorflow - INFO - after [convert_to_unicode] :薄膜  a140666ct  nd  te
+2021-07-07 23:06:45,154 - tensorflow - INFO - output:['薄', '膜', ' ', ' ', 'a', '1', '4', '0', '6', '6', '6', 'c', 't', ' ', ' ', 'n', 'd', ' ', ' ', 't', 'e']
+2021-07-07 23:06:45,154 - tensorflow - INFO - after [_clean_text] :薄膜  a140666ct  nd  te
+2021-07-07 23:06:45,154 - tensorflow - INFO - after [_tokenize_chinese_chars] : 薄  膜   a140666ct  nd  te
+2021-07-07 23:06:45,154 - tensorflow - INFO - after [whitespace_tokenize] :['薄', '膜', 'a140666ct', 'nd', 'te']
+2021-07-07 23:06:45,154 - tensorflow - INFO - token :薄
+2021-07-07 23:06:45,154 - tensorflow - INFO - chars:['薄']
+2021-07-07 23:06:45,154 - tensorflow - INFO - token :膜
+2021-07-07 23:06:45,154 - tensorflow - INFO - chars:['膜']
+2021-07-07 23:06:45,154 - tensorflow - INFO - token :a140666ct
+2021-07-07 23:06:45,154 - tensorflow - INFO - chars:['a', '1', '4', '0', '6', '6', '6', 'c', 't']
+2021-07-07 23:06:45,154 - tensorflow - INFO - token :nd
+2021-07-07 23:06:45,155 - tensorflow - INFO - chars:['n', 'd']
+2021-07-07 23:06:45,155 - tensorflow - INFO - token :te
+2021-07-07 23:06:45,155 - tensorflow - INFO - chars:['t', 'e']
+2021-07-07 23:06:45,155 - tensorflow - INFO - split_tokens :['薄', '膜', 'a140666ct', 'nd', 'te']
+2021-07-07 23:06:45,155 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['薄', '膜', 'a140666ct', 'nd', 'te']
+2021-07-07 23:06:45,155 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :薄
+2021-07-07 23:06:45,155 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,155 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :膜
+2021-07-07 23:06:45,156 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['[UNK]']
+2021-07-07 23:06:45,156 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :a140666ct
+2021-07-07 23:06:45,156 - tensorflow - INFO - cur_substr :a140666ct
+2021-07-07 23:06:45,156 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['a140666ct']
+2021-07-07 23:06:45,156 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :nd
+2021-07-07 23:06:45,157 - tensorflow - INFO - cur_substr :nd
+2021-07-07 23:06:45,157 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['nd']
+2021-07-07 23:06:45,157 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :te
+2021-07-07 23:06:45,157 - tensorflow - INFO - cur_substr :te
+2021-07-07 23:06:45,157 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['te']
+2021-07-07 23:06:45,157 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']]]
+2021-07-07 23:06:45,157 - tensorflow - INFO - 传入的text：= = =
+2021-07-07 23:06:45,157 - tensorflow - INFO - after [convert_to_unicode] := = =
+2021-07-07 23:06:45,157 - tensorflow - INFO - output:['=', ' ', '=', ' ', '=']
+2021-07-07 23:06:45,157 - tensorflow - INFO - after [_clean_text] := = =
+2021-07-07 23:06:45,157 - tensorflow - INFO - after [_tokenize_chinese_chars] := = =
+2021-07-07 23:06:45,157 - tensorflow - INFO - after [whitespace_tokenize] :['=', '=', '=']
+2021-07-07 23:06:45,157 - tensorflow - INFO - token :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - chars:['=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - token :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - chars:['=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - token :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - chars:['=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - split_tokens :['=', '=', '=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - after [basic_tokenizer.tokenize] :['=', '=', '=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - cur_substr :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - cur_substr :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['=']
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]传入 :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - cur_substr :=
+2021-07-07 23:06:45,158 - tensorflow - INFO - [wordpiece_tokenizer.tokenize]返回 :['=']
+2021-07-07 23:06:45,159 - tensorflow - INFO - 当前 all_documents:[[['koa', 'speer', 'elec', '##tronics']], [['cel', 'eval', 'board', 'upc8172tb']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['24', '024', '101', 'dip', 'cable']], [['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te'], ['=', '=', '=']]]
+2021-07-07 23:06:45,159 - tensorflow - INFO - 传入的text：
+2021-07-07 23:06:45,159 - tensorflow - INFO - after [convert_to_unicode] :
+2021-07-07 23:06:45,159 - tensorflow - INFO - output:[]
+2021-07-07 23:06:45,159 - tensorflow - INFO - after [_clean_text] :
+2021-07-07 23:06:45,159 - tensorflow - INFO - after [_tokenize_chinese_chars] :
+2021-07-07 23:06:45,159 - tensorflow - INFO - after [whitespace_tokenize] :[]
+2021-07-07 23:06:45,159 - tensorflow - INFO - split_tokens :[]
+2021-07-07 23:06:45,159 - tensorflow - INFO - after [basic_tokenizer.tokenize] :[]
+2021-07-07 23:06:45,159 - tensorflow - INFO - documents数量:5
+2021-07-07 23:06:45,159 - tensorflow - INFO - 语料数量:10
+2021-07-07 23:06:45,159 - tensorflow - INFO - 打乱 all_documents:[[['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te'], ['=', '=', '=']], [['avx', 'corporation', '478', '08052c223kaz2atr']], [['cel', 'eval', 'board', 'upc8172tb']], [['koa', 'speer', 'elec', '##tronics']], [['24', '024', '101', 'dip', 'cable']]]
+2021-07-07 23:06:45,159 - tensorflow - INFO - =====document_index：0=========
+2021-07-07 23:06:45,159 - tensorflow - INFO - document 长度：6
+2021-07-07 23:06:45,160 - tensorflow - INFO - target_seq_length：27
+2021-07-07 23:06:45,160 - tensorflow - INFO - segment：['cap', 'tant', 'poly', 'cha']--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_chunk：[['cap', 'tant', 'poly', 'cha']]--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_length：4--0
+2021-07-07 23:06:45,160 - tensorflow - INFO - segment：['c326c561fag5ta7301', 'kemet', 'cap']--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_chunk：[['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap']]--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_length：7--1
+2021-07-07 23:06:45,160 - tensorflow - INFO - segment：['ipp', 'tvs', '二', '极', '管']--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_chunk：[['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管']]--
+2021-07-07 23:06:45,160 - tensorflow - INFO - current_length：12--2
+2021-07-07 23:06:45,160 - tensorflow - INFO - segment：['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']--
+2021-07-07 23:06:45,161 - tensorflow - INFO - current_chunk：[['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']]--
+2021-07-07 23:06:45,161 - tensorflow - INFO - current_length：24--3
+2021-07-07 23:06:45,161 - tensorflow - INFO - segment：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']--
+2021-07-07 23:06:45,161 - tensorflow - INFO - current_chunk：[['cap', 'tant', 'poly', 'cha'], ['c326c561fag5ta7301', 'kemet', 'cap'], ['ipp', 'tvs', '二', '极', '管'], ['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']]--
+2021-07-07 23:06:45,161 - tensorflow - INFO - current_length：29--4
+2021-07-07 23:06:45,161 - tensorflow - INFO - a_end：3
+2021-07-07 23:06:45,161 - tensorflow - INFO - tokens_a：['cap', 'tant', 'poly', 'cha', 'c326c561fag5ta7301', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,161 - tensorflow - INFO - rng.random()：0.5660081687288613
+2021-07-07 23:06:45,161 - tensorflow - INFO - 非下一句，i更新：2
+2021-07-07 23:06:45,161 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['cap', 'tant', 'poly', 'cha', 'c326c561fag5ta7301', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,161 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['koa', 'speer', 'elec', '##tronics']
+2021-07-07 23:06:45,161 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['cap', 'tant', 'poly', 'cha', 'c326c561fag5ta7301', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管']
+2021-07-07 23:06:45,161 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['koa', 'speer', 'elec', '##tronics']
+2021-07-07 23:06:45,161 - tensorflow - INFO - 原始tokens：['[CLS]', 'cap', 'tant', 'poly', 'cha', 'c326c561fag5ta7301', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管', '[SEP]', 'koa', 'speer', 'elec', '##tronics', '[SEP]']
+2021-07-07 23:06:45,162 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', 'cap', 'tant', 'poly', 'sod', '[MASK]', 'kemet', 'cap', '[MASK]', 'tvs', '二', '极', '管', '[SEP]', 'koa', 'speer', 'elec', '##tronics', '[SEP]']
+2021-07-07 23:06:45,162 - tensorflow - INFO - segment：['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_chunk：[['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']]--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_length：12--3
+2021-07-07 23:06:45,162 - tensorflow - INFO - segment：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_chunk：[['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']]--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_length：17--4
+2021-07-07 23:06:45,162 - tensorflow - INFO - segment：['=', '=', '=']--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_chunk：[['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]'], ['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te'], ['=', '=', '=']]--
+2021-07-07 23:06:45,162 - tensorflow - INFO - current_length：20--5
+2021-07-07 23:06:45,162 - tensorflow - INFO - a_end：1
+2021-07-07 23:06:45,162 - tensorflow - INFO - tokens_a：['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']
+2021-07-07 23:06:45,163 - tensorflow - INFO - rng.random()：0.006673305781472405
+2021-07-07 23:06:45,163 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']
+2021-07-07 23:06:45,163 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=']
+2021-07-07 23:06:45,163 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]']
+2021-07-07 23:06:45,163 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=']
+2021-07-07 23:06:45,163 - tensorflow - INFO - 原始tokens：['[CLS]', '665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]', '[SEP]', '[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=', '[SEP]']
+2021-07-07 23:06:45,163 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', '665', 'ohms', '0', '[UNK]', '1', '%', '0', '[MASK]', '[UNK]', '2', '[UNK]', '[UNK]', '[SEP]', '[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '1000uf', '=', '=', '[SEP]']
+2021-07-07 23:06:45,163 - tensorflow - INFO - =====document_index：0=========
+2021-07-07 23:06:45,163 - tensorflow - INFO - =====document_index：1=========
+2021-07-07 23:06:45,164 - tensorflow - INFO - document 长度：1
+2021-07-07 23:06:45,164 - tensorflow - INFO - target_seq_length：27
+2021-07-07 23:06:45,164 - tensorflow - INFO - segment：['avx', 'corporation', '478', '08052c223kaz2atr']--
+2021-07-07 23:06:45,164 - tensorflow - INFO - current_chunk：[['avx', 'corporation', '478', '08052c223kaz2atr']]--
+2021-07-07 23:06:45,164 - tensorflow - INFO - current_length：4--0
+2021-07-07 23:06:45,164 - tensorflow - INFO - a_end：1
+2021-07-07 23:06:45,164 - tensorflow - INFO - tokens_a：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,164 - tensorflow - INFO - rng.random()：0.916028685559798
+2021-07-07 23:06:45,164 - tensorflow - INFO - 非下一句，i更新：0
+2021-07-07 23:06:45,164 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,165 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['c326c561fag5ta7301', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管', '665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'a140666ct', 'nd', 'te']
+2021-07-07 23:06:45,165 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,165 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['kemet', 'cap', 'ipp', 'tvs', '二', '极', '管', '665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'a140666ct', 'nd']
+2021-07-07 23:06:45,165 - tensorflow - INFO - 原始tokens：['[CLS]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管', '665', 'ohms', '0', '[UNK]', '1', '%', '0', '[UNK]', '[UNK]', '2', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'a140666ct', 'nd', '[SEP]']
+2021-07-07 23:06:45,165 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]', 'kemet', 'cap', 'ipp', 'tvs', '二', '极', '管', '665', 'ohms', '123fl', '[MASK]', '1', '%', '0', '[MASK]', '[MASK]', '2', '[UNK]', '[UNK]', '[UNK]', '[UNK]', 'a140666ct', 'nd', '[SEP]']
+2021-07-07 23:06:45,165 - tensorflow - INFO - =====document_index：1=========
+2021-07-07 23:06:45,165 - tensorflow - INFO - =====document_index：2=========
+2021-07-07 23:06:45,165 - tensorflow - INFO - document 长度：1
+2021-07-07 23:06:45,165 - tensorflow - INFO - target_seq_length：27
+2021-07-07 23:06:45,165 - tensorflow - INFO - segment：['cel', 'eval', 'board', 'upc8172tb']--
+2021-07-07 23:06:45,165 - tensorflow - INFO - current_chunk：[['cel', 'eval', 'board', 'upc8172tb']]--
+2021-07-07 23:06:45,166 - tensorflow - INFO - current_length：4--0
+2021-07-07 23:06:45,166 - tensorflow - INFO - a_end：1
+2021-07-07 23:06:45,166 - tensorflow - INFO - tokens_a：['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,166 - tensorflow - INFO - rng.random()：0.6628464810443062
+2021-07-07 23:06:45,166 - tensorflow - INFO - 非下一句，i更新：0
+2021-07-07 23:06:45,166 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,166 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=']
+2021-07-07 23:06:45,166 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['cel', 'eval', 'board', 'upc8172tb']
+2021-07-07 23:06:45,166 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=']
+2021-07-07 23:06:45,166 - tensorflow - INFO - 原始tokens：['[CLS]', 'cel', 'eval', 'board', 'upc8172tb', '[SEP]', '[UNK]', '[UNK]', 'a140666ct', 'nd', 'te', '=', '=', '=', '[SEP]']
+2021-07-07 23:06:45,166 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', '[MASK]', 'eval', 'board', 'upc8172tb', '[SEP]', '[UNK]', '[UNK]', 'a140666ct', 'nd', '[MASK]', '=', '=', '=', '[SEP]']
+2021-07-07 23:06:45,166 - tensorflow - INFO - =====document_index：2=========
+2021-07-07 23:06:45,166 - tensorflow - INFO - =====document_index：3=========
+2021-07-07 23:06:45,166 - tensorflow - INFO - document 长度：1
+2021-07-07 23:06:45,166 - tensorflow - INFO - target_seq_length：2
+2021-07-07 23:06:45,167 - tensorflow - INFO - segment：['koa', 'speer', 'elec', '##tronics']--
+2021-07-07 23:06:45,167 - tensorflow - INFO - current_chunk：[['koa', 'speer', 'elec', '##tronics']]--
+2021-07-07 23:06:45,167 - tensorflow - INFO - current_length：4--0
+2021-07-07 23:06:45,167 - tensorflow - INFO - a_end：1
+2021-07-07 23:06:45,167 - tensorflow - INFO - tokens_a：['koa', 'speer', 'elec', '##tronics']
+2021-07-07 23:06:45,167 - tensorflow - INFO - rng.random()：0.6576843149666971
+2021-07-07 23:06:45,167 - tensorflow - INFO - 非下一句，i更新：0
+2021-07-07 23:06:45,167 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['koa', 'speer', 'elec', '##tronics']
+2021-07-07 23:06:45,167 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,167 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['koa', 'speer', 'elec', '##tronics']
+2021-07-07 23:06:45,167 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,167 - tensorflow - INFO - 原始tokens：['[CLS]', 'koa', 'speer', 'elec', '##tronics', '[SEP]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]']
+2021-07-07 23:06:45,167 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', 'koa', 'speer', '[MASK]', '##tronics', '[SEP]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]']
+2021-07-07 23:06:45,167 - tensorflow - INFO - =====document_index：3=========
+2021-07-07 23:06:45,167 - tensorflow - INFO - =====document_index：4=========
+2021-07-07 23:06:45,167 - tensorflow - INFO - document 长度：1
+2021-07-07 23:06:45,167 - tensorflow - INFO - target_seq_length：27
+2021-07-07 23:06:45,168 - tensorflow - INFO - segment：['24', '024', '101', 'dip', 'cable']--
+2021-07-07 23:06:45,168 - tensorflow - INFO - current_chunk：[['24', '024', '101', 'dip', 'cable']]--
+2021-07-07 23:06:45,168 - tensorflow - INFO - current_length：5--0
+2021-07-07 23:06:45,168 - tensorflow - INFO - a_end：1
+2021-07-07 23:06:45,168 - tensorflow - INFO - tokens_a：['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,168 - tensorflow - INFO - rng.random()：0.3947751386303626
+2021-07-07 23:06:45,168 - tensorflow - INFO - 非下一句，i更新：0
+2021-07-07 23:06:45,168 - tensorflow - INFO - before truncate_seq_pair, tokens_a：['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,168 - tensorflow - INFO - before truncate_seq_pair, tokens_b：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,168 - tensorflow - INFO - after truncate_seq_pair, tokens_a：['24', '024', '101', 'dip', 'cable']
+2021-07-07 23:06:45,168 - tensorflow - INFO - after truncate_seq_pair, tokens_b：['avx', 'corporation', '478', '08052c223kaz2atr']
+2021-07-07 23:06:45,168 - tensorflow - INFO - 原始tokens：['[CLS]', '24', '024', '101', 'dip', 'cable', '[SEP]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]']
+2021-07-07 23:06:45,168 - tensorflow - INFO - create_masked_lm_predictions 后tokens：['[CLS]', '24', '[MASK]', '101', 'dip', '[MASK]', '[SEP]', 'avx', 'corporation', '478', '08052c223kaz2atr', '[SEP]']
+2021-07-07 23:06:45,168 - tensorflow - INFO - =====document_index：4=========
+2021-07-07 23:06:45,169 - tensorflow - INFO - instances:[tokens: [CLS] cap tant poly sod [MASK] kemet cap [MASK] tvs 二 极 管 [SEP] koa speer elec ##tronics [SEP]
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+is_random_next: True
+masked_lm_positions: 4 5 8
+masked_lm_labels: cha c326c561fag5ta7301 ipp
+
+, tokens: [CLS] avx corporation 478 08052c223kaz2atr [SEP] kemet cap ipp tvs 二 极 管 665 ohms 123fl [MASK] 1 % 0 [MASK] [MASK] 2 [UNK] [UNK] [UNK] [UNK] a140666ct nd [SEP]
+segment_ids: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+is_random_next: True
+masked_lm_positions: 15 16 20 21
+masked_lm_labels: 0 [UNK] [UNK] [UNK]
+
+, tokens: [CLS] [MASK] eval board upc8172tb [SEP] [UNK] [UNK] a140666ct nd [MASK] = = = [SEP]
+segment_ids: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+is_random_next: True
+masked_lm_positions: 1 10
+masked_lm_labels: cel te
+
+, tokens: [CLS] koa speer [MASK] ##tronics [SEP] avx corporation 478 08052c223kaz2atr [SEP]
+segment_ids: 0 0 0 0 0 0 1 1 1 1 1
+is_random_next: True
+masked_lm_positions: 3 8
+masked_lm_labels: elec 478
+
+, tokens: [CLS] 665 ohms 0 [UNK] 1 % 0 [MASK] [UNK] 2 [UNK] [UNK] [SEP] [UNK] [UNK] a140666ct nd te 1000uf = = [SEP]
+segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+is_random_next: False
+masked_lm_positions: 8 14 19
+masked_lm_labels: [UNK] [UNK] =
+
+, tokens: [CLS] 24 [MASK] 101 dip [MASK] [SEP] avx corporation 478 08052c223kaz2atr [SEP]
+segment_ids: 0 0 0 0 0 0 0 1 1 1 1 1
+is_random_next: True
+masked_lm_positions: 2 5
+masked_lm_labels: 024 cable
+
+]--<class 'list'>
+2021-07-07 23:06:45,169 - tensorflow - INFO - *** Writing to output files ***
+2021-07-07 23:06:45,169 - tensorflow - INFO -   tf_examples.tfrecord
+2021-07-07 23:06:45,169 - tensorflow - WARNING - From create_pretraining_data.py:117: The name tf.python_io.TFRecordWriter is deprecated. Please use tf.io.TFRecordWriter instead.
+
+2021-07-07 23:06:45,170 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,170 - tensorflow - INFO - tokens: [CLS] cap tant poly sod [MASK] kemet cap [MASK] tvs 二 极 管 [SEP] koa speer elec ##tronics [SEP]
+2021-07-07 23:06:45,170 - tensorflow - INFO - input_ids: 5 72 108 98 106 7 89 72 7 111 113 114 115 6 90 107 76 77 6 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,170 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,170 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,170 - tensorflow - INFO - masked_lm_positions: 4 5 8 0
+2021-07-07 23:06:45,170 - tensorflow - INFO - masked_lm_ids: 79 70 88 0
+2021-07-07 23:06:45,170 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 1.0 0.0
+2021-07-07 23:06:45,170 - tensorflow - INFO - next_sentence_labels: 1
+2021-07-07 23:06:45,170 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,171 - tensorflow - INFO - tokens: [CLS] avx corporation 478 08052c223kaz2atr [SEP] kemet cap ipp tvs 二 极 管 665 ohms 123fl [MASK] 1 % 0 [MASK] [MASK] 2 [UNK] [UNK] [UNK] [UNK] a140666ct nd [SEP]
+2021-07-07 23:06:45,171 - tensorflow - INFO - input_ids: 5 67 81 59 46 6 89 72 88 111 113 114 115 62 96 51 7 20 15 19 7 7 21 4 4 4 4 64 94 6
+2021-07-07 23:06:45,171 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+2021-07-07 23:06:45,171 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+2021-07-07 23:06:45,171 - tensorflow - INFO - masked_lm_positions: 15 16 20 21
+2021-07-07 23:06:45,171 - tensorflow - INFO - masked_lm_ids: 19 4 4 4
+2021-07-07 23:06:45,171 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 1.0 1.0
+2021-07-07 23:06:45,171 - tensorflow - INFO - next_sentence_labels: 1
+2021-07-07 23:06:45,172 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,172 - tensorflow - INFO - tokens: [CLS] [MASK] eval board upc8172tb [SEP] [UNK] [UNK] a140666ct nd [MASK] = = = [SEP]
+2021-07-07 23:06:45,172 - tensorflow - INFO - input_ids: 5 7 84 68 112 6 4 4 64 94 7 63 63 63 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,172 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,172 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,172 - tensorflow - INFO - masked_lm_positions: 1 10 0 0
+2021-07-07 23:06:45,173 - tensorflow - INFO - masked_lm_ids: 73 109 0 0
+2021-07-07 23:06:45,173 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 0.0 0.0
+2021-07-07 23:06:45,173 - tensorflow - INFO - next_sentence_labels: 1
+2021-07-07 23:06:45,173 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,173 - tensorflow - INFO - tokens: [CLS] koa speer [MASK] ##tronics [SEP] avx corporation 478 08052c223kaz2atr [SEP]
+2021-07-07 23:06:45,173 - tensorflow - INFO - input_ids: 5 90 107 7 77 6 67 81 59 46 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,173 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,174 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,174 - tensorflow - INFO - masked_lm_positions: 3 8 0 0
+2021-07-07 23:06:45,174 - tensorflow - INFO - masked_lm_ids: 76 59 0 0
+2021-07-07 23:06:45,174 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 0.0 0.0
+2021-07-07 23:06:45,174 - tensorflow - INFO - next_sentence_labels: 1
+2021-07-07 23:06:45,174 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,175 - tensorflow - INFO - tokens: [CLS] 665 ohms 0 [UNK] 1 % 0 [MASK] [UNK] 2 [UNK] [UNK] [SEP] [UNK] [UNK] a140666ct nd te 1000uf = = [SEP]
+2021-07-07 23:06:45,175 - tensorflow - INFO - input_ids: 5 62 96 19 4 20 15 19 7 4 21 4 4 6 4 4 64 94 109 47 63 63 6 0 0 0 0 0 0 0
+2021-07-07 23:06:45,175 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0
+2021-07-07 23:06:45,175 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0
+2021-07-07 23:06:45,175 - tensorflow - INFO - masked_lm_positions: 8 14 19 0
+2021-07-07 23:06:45,175 - tensorflow - INFO - masked_lm_ids: 4 4 63 0
+2021-07-07 23:06:45,175 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 1.0 0.0
+2021-07-07 23:06:45,175 - tensorflow - INFO - next_sentence_labels: 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - *** Example ***
+2021-07-07 23:06:45,176 - tensorflow - INFO - tokens: [CLS] 24 [MASK] 101 dip [MASK] [SEP] avx corporation 478 08052c223kaz2atr [SEP]
+2021-07-07 23:06:45,176 - tensorflow - INFO - input_ids: 5 54 7 48 82 7 6 67 81 59 46 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - segment_ids: 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - masked_lm_positions: 2 5 0 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - masked_lm_ids: 45 71 0 0
+2021-07-07 23:06:45,176 - tensorflow - INFO - masked_lm_weights: 1.0 1.0 0.0 0.0
+2021-07-07 23:06:45,176 - tensorflow - INFO - next_sentence_labels: 1
+2021-07-07 23:06:45,176 - tensorflow - INFO - Wrote 6 total instances
