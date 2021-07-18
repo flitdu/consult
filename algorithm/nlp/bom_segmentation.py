@@ -32,7 +32,7 @@ jieba.load_userdict(datapath('data/dict.txt'))
 
 # re_han = re.compile("([ \u4E00 - \u9FD5 a-zA-Z0-9+#&\._%\-]+)" , re.U)
 re_han = re.compile("([ \u4E00-\u9FD5;]+)", re.U)
-df = pd.read_csv('/Users/dufy/code/corpus/para.txt', sep='@@', header=None)
+df = pd.read_csv(datapath('data/para.txt'), sep='@@', header=None)
 para_dict = {v:k for k,v in df[0].to_dict().items()}
 
 
@@ -63,15 +63,15 @@ if __name__ == "__main__":
                 tmp += list(jieba.cut(block))
             else:
                 if bool(re.search(r'\b\d+/\d+ *w\b', block)):  # 1/8w 情况
-                    para_list1 = re.split("\(|、|，|,|；", block)
-                    para_list2 = re.split("\(|、|，|_|；", block)
-                    para_list3 = re.split("\(|、|，|-|；", block)
+                    para_list1 = re.split("\（|\(|、|，|,|；", block)
+                    para_list2 = re.split("\（|\(|、|，|_|；", block)
+                    para_list3 = re.split("\（|\(|、|，|-|；", block)
                     para_list4=[]
                 else:
-                    para_list1 = re.split('\(|、|，|,|；', block)
-                    para_list2 = re.split('\(|、|，|_|；', block)
-                    para_list3 = re.split('\(|、|，|-|；', block)
-                    para_list4 = re.split('\(|、|，|/|／|；', block)
+                    para_list1 = re.split('\（|\(|、|，|,|；', block)
+                    para_list2 = re.split('\（|\(|、|，|_|；', block)
+                    para_list3 = re.split('\（|\(|、|，|-|；', block)
+                    para_list4 = re.split('\（|\(|、|，|/|／|；', block)
                 len_dic = {0:para_list1, 1:para_list2, 2:para_list3, 3:para_list4}
                 len_list = [len(i) for i in len_dic.values()]
                 max_index = len_list.index(max(len_list))  #长度最大对应的索引
