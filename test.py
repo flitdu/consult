@@ -1,35 +1,105 @@
-import timeit
+# %%
+import matplotlib
+from matplotlib import pyplot as plt
+
+# Default parameters for plots
+matplotlib.rcParams['font.size'] = 20
+matplotlib.rcParams['figure.titlesize'] = 20
+matplotlib.rcParams['figure.figsize'] = [9, 7]
+matplotlib.rcParams['font.family'] = ['STKaiTi']
+matplotlib.rcParams['axes.unicode_minus'] = False
 import tensorflow as tf
-n = 10**7
-# 创建在CPU上运算的2个矩阵
-with tf.device('/cpu:0'):
-    cpu_a = tf.random.normal([1, n])
-    cpu_b = tf.random.normal([n, 1])
-    print(cpu_a.device, cpu_b.device)
+from tensorflow import keras
+from tensorflow.keras import datasets, layers, optimizers
+import os
 
-# 创建使用GPU运算的2个矩阵
-with tf.device('/gpu:0'):
-    gpu_a = tf.random.normal([1, n])
-    gpu_b = tf.random.normal([n, 1])
-    print(gpu_a.device, gpu_b.device)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+print(tf.__version__)
 
 
-def cpu_run():
-    with tf.device('/cpu:0'):
-        c = tf.matmul(cpu_a, cpu_b)
-    return c
+def preprocess(x, y):
+    print('!!!')
+    # [b, 28, 28], [b]
+    print(x.shape, y.shape)
+    x = tf.cast(x, dtype=tf.float32) / 255.
+    x = tf.reshape(x, [-1, 28 * 28])
+    y = tf.cast(y, dtype=tf.int32)
+    # y = tf.one_hot(y, depth=10)
+
+    return x, y
 
 
-def gpu_run():
-    with tf.device('/gpu:0'):
-        c = tf.matmul(gpu_a, gpu_b)
-    return c
+# %%
+(x, y), (x_test, y_test) = datasets.mnist.load_data()
+x= x[:6]
+y= y[:6]
 
-# 第一次计算需要热身，避免将初始化阶段时间结算在内
-cpu_time = timeit.timeit(cpu_run, number=10)
-gpu_time = timeit.timeit(gpu_run, number=10)
-print('warmup:', cpu_time, gpu_time)
-# 正式计算10次，取平均时间
-cpu_time = timeit.timeit(cpu_run, number=10)
-gpu_time = timeit.timeit(gpu_run, number=10)
-print('run time:', cpu_time, gpu_time)
+print('x:', x.shape, 'y:', y.shape, 'x test:', x_test.shape, 'y test:', y_test)
+# %%
+batchsz = 3
+train_db = tf.data.Dataset.from_tensor_slices((x, y))
+train_db = train_db.shuffle(4)
+train_db = train_db.batch(batchsz)
+train_db = train_db.map(preprocess)
+train_db = train_db.repeat(3)
+print(type(train_db))
+for i,j in train_db:
+    print(j,'@@@@@@@@@')
+# %%
+
+test_db = tf.data.Dataset.from_tensor_slices((x_test, y_test))
+test_db = test_db.shuffle(1000).batch(batchsz).map(preprocess)
+
+print(next(iter(train_db))[1])
+print(next(iter(train_db))[1])
+print(next(iter(train_db))[1])
+print(next(iter(train_db))[1])
+
+
+
+# %%
+# def main():
+#     # learning rate
+#     lr = 1e-2
+#     accs, losses = [], []
+#
+#     # 784 => 512
+#     w1, b1 = tf.Variable(tf.random.normal([784, 256], stddev=0.1)), tf.Variable(tf.zeros([256]))
+#     # 512 => 256
+#     w2, b2 = tf.Variable(tf.random.normal([256, 128], stddev=0.1)), tf.Variable(tf.zeros([128]))
+#     # 256 => 10
+#     w3, b3 = tf.Variable(tf.random.normal([128, 10], stddev=0.1)), tf.Variable(tf.zeros([10]))
+#
+#     for step, (x, y) in enumerate(train_db):
+#         print(step, ': ', y, '.....')
+#
+#         # [b, 28, 28] => [b, 784]
+#         x = tf.reshape(x, (-1, 784))
+#
+#         with tf.GradientTape() as tape:
+#
+#             # layer1.
+#             h1 = x @ w1 + b1
+#             h1 = tf.nn.relu(h1)
+#             # layer2
+#             h2 = h1 @ w2 + b2
+#             h2 = tf.nn.relu(h2)
+#             # output
+#             out = h2 @ w3 + b3
+#             # out = tf.nn.relu(out)
+#
+#             # compute loss
+#             # [b, 10] - [b, 10]
+#             loss = tf.square(y - out)
+#             # [b, 10] => scalar
+#             loss = tf.reduce_mean(loss)
+#
+#         grads = tape.gradient(loss, [w1, b1, w2, b2, w3, b3])
+#         for p, g in zip([w1, b1, w2, b2, w3, b3], grads):
+#             p.assign_sub(lr * g)
+
+
+
+if __name__ == '__main__':
+    # main()
+    pass
