@@ -1,12 +1,28 @@
-# 二分类问题选择二元交叉熵损失函数
-model.compile(optimizer='adam',
-            loss='binary_crossentropy',
-            metrics=['AUC'])
-
-history = model.fit(x_train,y_train,
-                    batch_size= 64,
-                    epochs= 30,
-                    validation_split=0.2 #分割一部分训练数据用于验证
-                   )
 import tensorflow as tf
-tf.keras.backend.clear_session()
+from tensorflow.keras import datasets,layers,models
+
+
+tf.keras.backend.clear_session() #清空会话
+
+inputs = layers.Input(shape=(32,32,3))
+x = layers.Conv2D(32,kernel_size=(3,3))(inputs)
+x = layers.MaxPool2D()(x)
+x = layers.Conv2D(64,kernel_size=(5,5))(x)
+x = layers.MaxPool2D()(x)
+x = layers.Dropout(rate=0.1)(x)
+x = layers.Flatten()(x)
+x = layers.Dense(32,activation='relu')(x)
+outputs = layers.Dense(1,activation = 'sigmoid')(x)
+
+model = models.Model(inputs = inputs,outputs = outputs)
+
+model.summary()
+
+
+model.compile(
+        optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
+        loss=tf.keras.losses.binary_crossentropy,
+        metrics=["accuracy"]
+    )
+
+model.evaluate
