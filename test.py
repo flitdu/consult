@@ -26,3 +26,12 @@ model.compile(
     )
 
 model.evaluate
+
+self.embedding = layers.Embedding(MAX_WORDS,7,input_length=MAX_LEN)
+from tensorflow.keras.layers.experimental.preprocessing import TextVectorization
+vectorize_layer = TextVectorization(
+    standardize=clean_text,
+    split = 'whitespace',
+    max_tokens=MAX_WORDS-1, #有一个留给占位符
+    output_mode='int',
+    output_sequence_length=MAX_LEN)
