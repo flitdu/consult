@@ -1,37 +1,22 @@
-import tensorflow as tf
-from tensorflow.keras import datasets,layers,models
+from utils import *
 
 
-tf.keras.backend.clear_session() #清空会话
+@cal_time
+def binary_search(li, val):
+    left = 0
+    right = len(li)-1
+    while left <= right:  # 候选区有值
+        pass
+        mid = (left+right)//2
+        if li[mid]==val:
+            return mid
+        elif li[mid]>val:  # 待查找的值在 mid 左侧
+            right = mid-1
+        else: # 待查找的值在 mid 右侧
+            left = mid+1
+    return None
 
-inputs = layers.Input(shape=(32,32,3))
-x = layers.Conv2D(32,kernel_size=(3,3))(inputs)
-x = layers.MaxPool2D()(x)
-x = layers.Conv2D(64,kernel_size=(5,5))(x)
-x = layers.MaxPool2D()(x)
-x = layers.Dropout(rate=0.1)(x)
-x = layers.Flatten()(x)
-x = layers.Dense(32,activation='relu')(x)
-outputs = layers.Dense(1,activation = 'sigmoid')(x)
 
-model = models.Model(inputs = inputs,outputs = outputs)
-
-model.summary()
-
-
-model.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
-        loss=tf.keras.losses.binary_crossentropy,
-        metrics=["accuracy"]
-    )
-
-model.evaluate
-
-self.embedding = layers.Embedding(MAX_WORDS,7,input_length=MAX_LEN)
-from tensorflow.keras.layers.experimental.preprocessing import TextVectorization
-vectorize_layer = TextVectorization(
-    standardize=clean_text,
-    split = 'whitespace',
-    max_tokens=MAX_WORDS-1, #有一个留给占位符
-    output_mode='int',
-    output_sequence_length=MAX_LEN)
+li = list(range(1,10))
+print(li)
+print(binary_search(li, 3))

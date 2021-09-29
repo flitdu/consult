@@ -3,6 +3,7 @@
 """
 
 import os
+import time
 
 module_path = os.path.dirname(__file__)  # needed because sample data files are located in the same folder
 
@@ -45,4 +46,23 @@ def datapath(fname):
         ...     pass
     """
     return os.path.join(module_path, fname)
+
+
+def cal_time(func):
+    """
+    计时装饰器
+
+    :param func:
+    :return:
+    """
+
+    def wrapper(*args, **kwargs):
+        t1 = time.time()
+        result = func(*args, **kwargs)
+        t2 = time.time()
+        print(f'{func.__name__} running time：{t2 - t1}secs')
+        return result
+    return wrapper
+
+
 
