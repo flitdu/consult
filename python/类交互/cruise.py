@@ -13,7 +13,7 @@ File : cruise.py
 
 class CruiseControl:
     def __init__(self, ignition):
-        self.ignition = ignition
+        self.__ignition = ignition
 
     def set_cruise_speed(self, veloty):
         """
@@ -22,10 +22,9 @@ class CruiseControl:
         :return:
         """
         print(f'cruise speed now is : {veloty}')
-        self.ignition.get_RPM()
-        self.ignition.set_RPM(10)
-        self.ignition.get_RPM()
-
+        self.__ignition.get_RPM()
+        self.__ignition.set_RPM(10)
+        self.__ignition.get_RPM()
 
 
 
