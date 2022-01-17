@@ -1,35 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-==============================================================================
-Time : 2021/9/30 12:39 上午
-Author : Dufy
-Email : 813540660@qq.com
-File : test_utils.py
+from sys import argv
+from PIL import Image
 
+if len(argv) !=4:
+    exit("usage: python resize.py n file outfile")
 
-==============================================================================
-"""
+n = int(argv[1])
+infile = argv[2]
+outfile = argv[3]
 
-import traceback
-from utils import *
+inimage = Image.open(infile)
+width, height = inimage.size
+outimage = inimage.resize((width * n, height * n))
 
-
-@cal_time
-def binary_search(li, val):
-    left = 0
-    right = len(li)-1
-    while left <= right:  # 候选区有值
-        pass
-        mid = (left+right)//2
-        if li[mid]==val:
-            return mid
-        elif li[mid]>val:  # 待查找的值在 mid 左侧
-            right = mid-1
-        else: # 待查找的值在 mid 右侧
-            left = mid+1
-    return None
-
-
-li = list(range(1,10))
-print(li)
-print(binary_search(li, 3))
+outimage.save(outfile)
