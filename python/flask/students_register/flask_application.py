@@ -10,9 +10,12 @@ File : flask_application.py
 ==============================================================================
 """
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__, template_folder='templates')
+
+# registered students
+students = []
 
 
 @app.route("/")
@@ -22,6 +25,11 @@ def index():
     # return "hello, world"
 
 
+@app.route("/registrants")
+def registrants():
+    return render_template("registered.html", students=students)
+
+
 @app.route("/register", methods=["POST"])
 def register():
     name = request.form.get("name")  # form 对应 post; args对应 get
@@ -29,8 +37,8 @@ def register():
     if not name or not dorm:
         # return "failure"
         return render_template("failure.html")
-    else:
-        return render_template("success.html")
+    students.append(f'{name} from {dorm}')
+    return redirect("/registrants")
 
 
 if __name__ == "__main__":
